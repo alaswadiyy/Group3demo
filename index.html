@@ -26,9 +26,9 @@
             const name = form.name.value; 
             const email = form.email.value; 
             const response = await fetch('https://adaptverifygroup3-hufvdmgqbehycchf.eastus2-01.azurewebsites.net/api/KCY/verify', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name, email }) }); 
-            const data = await response.json(); document.getElementById('result').innerHTML = ` <strong>Name:</strong> ${data.name}<br/> 
-            <strong>Email:</strong> ${data.email}<br/> <strong>Risk Level:</strong> ${data.risk}<br/> 
-            <strong>Verification Method:</strong> ${data.verification} `; }); 
+            const data = await response.json(); document.getElementById('result').innerHTML = ` 
+            <strong>Risk Level:</strong> ${data.riskProfile}<br/> 
+            <strong>Verification Method:</strong> ${data.requirements} `; }); 
         </script> 
     </body> 
 </html>
